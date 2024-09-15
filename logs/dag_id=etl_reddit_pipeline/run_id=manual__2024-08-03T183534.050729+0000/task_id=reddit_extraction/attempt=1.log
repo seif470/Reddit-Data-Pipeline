@@ -1,0 +1,40 @@
+[2024-08-03T18:35:35.754+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-03T18:35:34.050729+00:00 [queued]>
+[2024-08-03T18:35:35.763+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-03T18:35:34.050729+00:00 [queued]>
+[2024-08-03T18:35:35.764+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-08-03T18:35:35.780+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-08-03 18:35:34.050729+00:00
+[2024-08-03T18:35:35.786+0000] {standard_task_runner.py:57} INFO - Started process 111 to run task
+[2024-08-03T18:35:35.789+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'manual__2024-08-03T18:35:34.050729+00:00', '--job-id', '660', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmpmo4phbkt']
+[2024-08-03T18:35:35.792+0000] {standard_task_runner.py:85} INFO - Job 660: Subtask reddit_extraction
+[2024-08-03T18:35:35.837+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-03T18:35:34.050729+00:00 [running]> on host 8eab068d030e
+[2024-08-03T18:35:35.937+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Seif Yasser' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-08-03T18:35:34.050729+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-03T18:35:34.050729+00:00'
+[2024-08-03T18:35:35.941+0000] {logging_mixin.py:151} INFO - connected to reddit!
+[2024-08-03T18:35:37.386+0000] {logging_mixin.py:151} INFO -          id  ... stickied
+0   1eivu0m  ...    False
+1   1eikxop  ...    False
+2   1eim8zm  ...    False
+3   1ej118b  ...    False
+4   1eigve6  ...    False
+5   1ej0pi4  ...    False
+6   1eioqrz  ...    False
+7   1eikli1  ...    False
+8   1ej7f0o  ...    False
+9   1ej3bjw  ...    False
+10  1eiqlf3  ...    False
+11  1eiyymw  ...    False
+12  1ej5znn  ...    False
+13  1ej1s66  ...    False
+14  1eiv3rw  ...    False
+15  1eih3ly  ...    False
+16  1ej87li  ...    False
+17  1eih0bk  ...    False
+18  1ej988j  ...    False
+19  1ej8okb  ...    False
+20  1eiynsa  ...    False
+21  1eiswrd  ...    False
+22  1eiwl0g  ...    False
+
+[23 rows x 11 columns]
+[2024-08-03T18:35:37.387+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-08-03T18:35:37.397+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20240803T183534, start_date=20240803T183535, end_date=20240803T183537
+[2024-08-03T18:35:37.449+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-08-03T18:35:37.468+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

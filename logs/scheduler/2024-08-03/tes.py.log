@@ -1,0 +1,95 @@
+[2024-08-03T15:37:26.744+0000] {processor.py:157} INFO - Started process (PID=278) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:37:26.745+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:37:26.746+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:37:26.745+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:37:26.764+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:37:26.762+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/tes.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/tes.py", line 40, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts
+ModuleNotFoundError: No module named 'etls'
+[2024-08-03T15:37:26.767+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:37:26.785+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.045 seconds
+[2024-08-03T15:37:57.006+0000] {processor.py:157} INFO - Started process (PID=280) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:37:57.007+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:37:57.008+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:37:57.008+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:37:57.025+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:37:57.023+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/tes.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/tes.py", line 40, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts
+ModuleNotFoundError: No module named 'etls'
+[2024-08-03T15:37:57.026+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:37:57.044+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.041 seconds
+[2024-08-03T15:38:14.180+0000] {processor.py:157} INFO - Started process (PID=282) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:38:14.181+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:38:14.182+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:38:14.182+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:38:14.212+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:38:14.208+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/tes.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/tes.py", line 39, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts
+ModuleNotFoundError: No module named 'etls'
+[2024-08-03T15:38:14.213+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:38:14.236+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.061 seconds
+[2024-08-03T15:38:44.447+0000] {processor.py:157} INFO - Started process (PID=284) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:38:44.448+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:38:44.449+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:38:44.449+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:38:44.465+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:38:44.462+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/tes.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/tes.py", line 39, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts
+ModuleNotFoundError: No module named 'etls'
+[2024-08-03T15:38:44.466+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:38:44.485+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.042 seconds
+[2024-08-03T15:39:05.588+0000] {processor.py:157} INFO - Started process (PID=285) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:39:05.589+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:39:05.591+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:39:05.590+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:05.608+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:39:05.606+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/tes.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/tes.py", line 38, in <module>
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+NameError: name 'sys' is not defined
+[2024-08-03T15:39:05.610+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:05.628+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.044 seconds
+[2024-08-03T15:39:22.770+0000] {processor.py:157} INFO - Started process (PID=287) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:39:22.772+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:39:22.773+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:39:22.772+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:22.878+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:22.892+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.125 seconds
+[2024-08-03T15:39:53.104+0000] {processor.py:157} INFO - Started process (PID=289) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:39:53.105+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:39:53.106+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:39:53.106+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:53.202+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:53.216+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.116 seconds
+[2024-08-03T15:39:59.288+0000] {processor.py:157} INFO - Started process (PID=290) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:39:59.289+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:39:59.290+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:39:59.290+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:59.395+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:39:59.408+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.124 seconds
+[2024-08-03T15:40:29.672+0000] {processor.py:157} INFO - Started process (PID=292) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:40:29.673+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:40:29.674+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:40:29.674+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:40:29.768+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:40:29.781+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.113 seconds
+[2024-08-03T15:41:00.005+0000] {processor.py:157} INFO - Started process (PID=294) to work on /opt/airflow/dags/tes.py
+[2024-08-03T15:41:00.007+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tes.py for tasks to queue
+[2024-08-03T15:41:00.008+0000] {logging_mixin.py:151} INFO - [2024-08-03T15:41:00.007+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/tes.py
+[2024-08-03T15:41:00.109+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/tes.py
+[2024-08-03T15:41:00.121+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tes.py took 0.121 seconds

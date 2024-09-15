@@ -1,0 +1,81 @@
+[2024-08-12T20:05:27.728+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-08-12T20:05:27.752+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-08-12T20:05:27.753+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-08-12T20:05:27.789+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-08-11 00:00:00+00:00
+[2024-08-12T20:05:27.805+0000] {standard_task_runner.py:57} INFO - Started process 50 to run task
+[2024-08-12T20:05:27.818+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'scheduled__2024-08-11T00:00:00+00:00', '--job-id', '684', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmp7hfxbuyt']
+[2024-08-12T20:05:27.832+0000] {standard_task_runner.py:85} INFO - Job 684: Subtask reddit_extraction
+[2024-08-12T20:05:28.002+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-08-11T00:00:00+00:00 [running]> on host 8eab068d030e
+[2024-08-12T20:05:28.337+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Seif Yasser' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-08-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-11T00:00:00+00:00'
+[2024-08-12T20:05:32.661+0000] {logging_mixin.py:151} INFO - connected to reddit!
+[2024-08-12T20:05:55.267+0000] {sessions.py:161} WARNING - Retrying due to ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=16.0)")) status: GET https://oauth.reddit.com/r/dataengineering/top
+[2024-08-12T20:06:12.522+0000] {sessions.py:161} WARNING - Retrying due to ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=16.0)")) status: GET https://oauth.reddit.com/r/dataengineering/top
+[2024-08-12T20:06:23.856+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 17, in reddit_pipeline
+    posts = extract_posts(instance, subreddit, time_filter, limit)
+  File "/opt/airflow/etls/reddit_etl.py", line 29, in extract_posts
+    for post in posts:
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/models/listing/generator.py", line 63, in __next__
+    self._next_batch()
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/models/listing/generator.py", line 89, in _next_batch
+    self._listing = self._reddit.get(self.url, params=self.params)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/util/deprecate_args.py", line 43, in wrapped
+    return func(**dict(zip(_old_args, args)), **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/reddit.py", line 712, in get
+    return self._objectify_request(method="GET", params=params, path=path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/reddit.py", line 517, in _objectify_request
+    self.request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/util/deprecate_args.py", line 43, in wrapped
+    return func(**dict(zip(_old_args, args)), **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/reddit.py", line 941, in request
+    return self._core.request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 328, in request
+    return self._request_with_retries(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 254, in _request_with_retries
+    return self._do_retry(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 162, in _do_retry
+    return self._request_with_retries(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 254, in _request_with_retries
+    return self._do_retry(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 162, in _do_retry
+    return self._request_with_retries(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 234, in _request_with_retries
+    response, saved_exception = self._make_request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 186, in _make_request
+    response = self._rate_limiter.call(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/rate_limit.py", line 46, in call
+    kwargs["headers"] = set_header_callback()
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 282, in _set_header_callback
+    self._authorizer.refresh()
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/auth.py", line 378, in refresh
+    self._request_token(grant_type="client_credentials", **additional_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/auth.py", line 155, in _request_token
+    response = self._authenticator._post(url=url, **data)
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/auth.py", line 51, in _post
+    response = self._requestor.request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/requestor.py", line 70, in request
+    raise RequestException(exc, args, kwargs) from None
+prawcore.exceptions.RequestException: error with request HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /api/v1/access_token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7a9a7f86a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2024-08-12T20:06:23.890+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20240811T000000, start_date=20240812T200527, end_date=20240812T200623
+[2024-08-12T20:06:23.911+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 684 for task reddit_extraction (error with request HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /api/v1/access_token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7a9a7f86a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')); 50)
+[2024-08-12T20:06:23.923+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-08-12T20:06:23.941+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-13T19:09:19.799+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-08-13T19:09:19.827+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-08-13T19:09:19.827+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-08-13T19:09:19.861+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-08-11 00:00:00+00:00
+[2024-08-13T19:09:19.872+0000] {standard_task_runner.py:57} INFO - Started process 82 to run task
+[2024-08-13T19:09:19.883+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'scheduled__2024-08-11T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmp0f94_b8e']
+[2024-08-13T19:09:19.891+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask reddit_extraction
+[2024-08-13T19:09:20.007+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction scheduled__2024-08-11T00:00:00+00:00 [running]> on host fdf0cefe5923
+[2024-08-13T19:09:20.203+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Seif Yasser' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-08-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-11T00:00:00+00:00'
+[2024-08-13T19:09:20.215+0000] {logging_mixin.py:151} INFO - connected to reddit!
+[2024-08-13T19:09:21.647+0000] {python.py:194} INFO - Done. Returned value was: /opt/airflow/data/output/reddit_20240813.csv
+[2024-08-13T19:09:21.732+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20240811T000000, start_date=20240813T190919, end_date=20240813T190921
+[2024-08-13T19:09:21.964+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-08-13T19:09:22.003+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

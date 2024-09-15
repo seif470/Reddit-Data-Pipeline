@@ -1,0 +1,23 @@
+[2024-08-01T19:01:40.673+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_pipeline_dag.run_reddit_pipeline scheduled__2023-08-19T00:00:00+00:00 [queued]>
+[2024-08-01T19:01:40.685+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_pipeline_dag.run_reddit_pipeline scheduled__2023-08-19T00:00:00+00:00 [queued]>
+[2024-08-01T19:01:40.686+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-08-01T19:01:40.768+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): run_reddit_pipeline> on 2023-08-19 00:00:00+00:00
+[2024-08-01T19:01:40.774+0000] {standard_task_runner.py:57} INFO - Started process 531 to run task
+[2024-08-01T19:01:40.778+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_pipeline_dag', 'run_reddit_pipeline', 'scheduled__2023-08-19T00:00:00+00:00', '--job-id', '257', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmpha0lkmx8']
+[2024-08-01T19:01:40.779+0000] {standard_task_runner.py:85} INFO - Job 257: Subtask run_reddit_pipeline
+[2024-08-01T19:01:40.955+0000] {task_command.py:416} INFO - Running <TaskInstance: reddit_pipeline_dag.run_reddit_pipeline scheduled__2023-08-19T00:00:00+00:00 [running]> on host 8eab068d030e
+[2024-08-01T19:01:41.313+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reddit_pipeline_dag' AIRFLOW_CTX_TASK_ID='run_reddit_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2023-08-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-19T00:00:00+00:00'
+[2024-08-01T19:01:42.681+0000] {logging_mixin.py:151} INFO - Does being an engineer/coder mean just looking up all the answers to your problems?
+[2024-08-01T19:01:42.682+0000] {logging_mixin.py:151} INFO - Will my eBay script get me banned?
+[2024-08-01T19:01:42.682+0000] {logging_mixin.py:151} INFO - Why did you choose Python over Golang for backend development?
+[2024-08-01T19:01:42.683+0000] {logging_mixin.py:151} INFO - How do I stop numbers going below 0 in Python?
+[2024-08-01T19:01:42.683+0000] {logging_mixin.py:151} INFO - Learn python the hard way-OOP
+[2024-08-01T19:01:42.683+0000] {logging_mixin.py:151} INFO - Completed a Python tutorial. What do I do next?
+[2024-08-01T19:01:42.684+0000] {logging_mixin.py:151} INFO - How to teach python to an absolute beginner who is unmotivated?
+[2024-08-01T19:01:42.684+0000] {logging_mixin.py:151} INFO - Why is exec() and eval() not considered good practice?
+[2024-08-01T19:01:42.685+0000] {logging_mixin.py:151} INFO - What is Python used for in Physics?
+[2024-08-01T19:01:42.685+0000] {logging_mixin.py:151} INFO - Best Python books for Data Structure and Algorithms (DSA) ? 
+[2024-08-01T19:01:42.686+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-08-01T19:01:42.696+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=reddit_pipeline_dag, task_id=run_reddit_pipeline, execution_date=20230819T000000, start_date=20240801T190140, end_date=20240801T190142
+[2024-08-01T19:01:42.838+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-08-01T19:01:42.862+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

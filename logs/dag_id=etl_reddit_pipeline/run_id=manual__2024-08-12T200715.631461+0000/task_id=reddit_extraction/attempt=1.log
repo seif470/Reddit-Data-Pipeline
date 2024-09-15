@@ -1,0 +1,59 @@
+[2024-08-12T20:07:17.185+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-12T20:07:15.631461+00:00 [queued]>
+[2024-08-12T20:07:17.194+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-12T20:07:15.631461+00:00 [queued]>
+[2024-08-12T20:07:17.194+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-08-12T20:07:17.209+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-08-12 20:07:15.631461+00:00
+[2024-08-12T20:07:17.215+0000] {standard_task_runner.py:57} INFO - Started process 53 to run task
+[2024-08-12T20:07:17.218+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'manual__2024-08-12T20:07:15.631461+00:00', '--job-id', '685', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmpnnw6xs8s']
+[2024-08-12T20:07:17.222+0000] {standard_task_runner.py:85} INFO - Job 685: Subtask reddit_extraction
+[2024-08-12T20:07:17.269+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-12T20:07:15.631461+00:00 [running]> on host 8eab068d030e
+[2024-08-12T20:07:17.362+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Seif Yasser' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-08-12T20:07:15.631461+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-12T20:07:15.631461+00:00'
+[2024-08-12T20:07:17.366+0000] {logging_mixin.py:151} INFO - connected to reddit!
+[2024-08-12T20:07:36.695+0000] {sessions.py:161} WARNING - Retrying due to ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=16.0)")) status: GET https://oauth.reddit.com/r/dataengineering/top
+[2024-08-12T20:07:56.963+0000] {sessions.py:161} WARNING - Retrying due to ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=16.0)")) status: GET https://oauth.reddit.com/r/dataengineering/top
+[2024-08-12T20:08:21.867+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 17, in reddit_pipeline
+    posts = extract_posts(instance, subreddit, time_filter, limit)
+  File "/opt/airflow/etls/reddit_etl.py", line 29, in extract_posts
+    for post in posts:
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/models/listing/generator.py", line 63, in __next__
+    self._next_batch()
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/models/listing/generator.py", line 89, in _next_batch
+    self._listing = self._reddit.get(self.url, params=self.params)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/util/deprecate_args.py", line 43, in wrapped
+    return func(**dict(zip(_old_args, args)), **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/reddit.py", line 712, in get
+    return self._objectify_request(method="GET", params=params, path=path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/reddit.py", line 517, in _objectify_request
+    self.request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/util/deprecate_args.py", line 43, in wrapped
+    return func(**dict(zip(_old_args, args)), **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/praw/reddit.py", line 941, in request
+    return self._core.request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 328, in request
+    return self._request_with_retries(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 254, in _request_with_retries
+    return self._do_retry(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 162, in _do_retry
+    return self._request_with_retries(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 254, in _request_with_retries
+    return self._do_retry(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 162, in _do_retry
+    return self._request_with_retries(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 234, in _request_with_retries
+    response, saved_exception = self._make_request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/sessions.py", line 186, in _make_request
+    response = self._rate_limiter.call(
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/rate_limit.py", line 47, in call
+    response = request_function(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/prawcore/requestor.py", line 70, in request
+    raise RequestException(exc, args, kwargs) from None
+prawcore.exceptions.RequestException: error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+[2024-08-12T20:08:21.888+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20240812T200715, start_date=20240812T200717, end_date=20240812T200821
+[2024-08-12T20:08:21.902+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 685 for task reddit_extraction (error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0); 53)
+[2024-08-12T20:08:21.944+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-08-12T20:08:21.961+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,50 @@
+[2024-08-01T20:26:07.530+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-01T20:26:06.326067+00:00 [queued]>
+[2024-08-01T20:26:07.554+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-01T20:26:06.326067+00:00 [queued]>
+[2024-08-01T20:26:07.554+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-08-01T20:26:07.578+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): reddit_extraction> on 2024-08-01 20:26:06.326067+00:00
+[2024-08-01T20:26:07.586+0000] {standard_task_runner.py:57} INFO - Started process 1278 to run task
+[2024-08-01T20:26:07.590+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_reddit_pipeline', 'reddit_extraction', 'manual__2024-08-01T20:26:06.326067+00:00', '--job-id', '630', '--raw', '--subdir', 'DAGS_FOLDER/reddit_dag.py', '--cfg-path', '/tmp/tmp8a081r2m']
+[2024-08-01T20:26:07.592+0000] {standard_task_runner.py:85} INFO - Job 630: Subtask reddit_extraction
+[2024-08-01T20:26:07.667+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2024-08-01T20:26:06.326067+00:00 [running]> on host 8eab068d030e
+[2024-08-01T20:26:07.779+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Seif Yasser' AIRFLOW_CTX_DAG_ID='etl_reddit_pipeline' AIRFLOW_CTX_TASK_ID='reddit_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-08-01T20:26:06.326067+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-01T20:26:06.326067+00:00'
+[2024-08-01T20:26:07.784+0000] {logging_mixin.py:151} INFO - connected to reddit!
+[2024-08-01T20:26:09.595+0000] {logging_mixin.py:151} INFO - Sr. Data Engineer vs excel guy
+[2024-08-01T20:26:09.596+0000] {logging_mixin.py:151} INFO - What separates the average DE from a desirable DE in this market?
+[2024-08-01T20:26:09.596+0000] {logging_mixin.py:151} INFO - Which database should I choose for a large database?
+[2024-08-01T20:26:09.597+0000] {logging_mixin.py:151} INFO - Is this book worth reading ? pls give some reviews if anyone of you has read it
+[2024-08-01T20:26:09.597+0000] {logging_mixin.py:151} INFO - S3 to snowflake
+[2024-08-01T20:26:09.598+0000] {logging_mixin.py:151} INFO - What are data engineering tools/systems that have a funny name?
+[2024-08-01T20:26:09.598+0000] {logging_mixin.py:151} INFO - DuckDB in production 
+[2024-08-01T20:26:09.599+0000] {logging_mixin.py:151} INFO - What is the easiest experience you've had applying for a data engineer job?
+[2024-08-01T20:26:09.599+0000] {logging_mixin.py:151} INFO - Is Nifi that Important ?
+[2024-08-01T20:26:09.600+0000] {logging_mixin.py:151} INFO - Is it a good idea to use Polars with Pyspark?
+[2024-08-01T20:26:09.600+0000] {logging_mixin.py:151} INFO - Amazon’s Exabyte-Scale Migration from Apache Spark to Ray on Amazon EC2
+[2024-08-01T20:26:09.601+0000] {logging_mixin.py:151} INFO - Learning Data Engineering (Project Advice)
+[2024-08-01T20:26:09.601+0000] {logging_mixin.py:151} INFO - Will Spark speed up my pipeline, Airflow, BigQuery
+[2024-08-01T20:26:09.602+0000] {logging_mixin.py:151} INFO - Monthly General Discussion - Aug 2024
+[2024-08-01T20:26:09.602+0000] {logging_mixin.py:151} INFO - Data engineering primer for a data scientist
+[2024-08-01T20:26:09.602+0000] {logging_mixin.py:151} INFO - Senior vs. Staff Data Engineer
+[2024-08-01T20:26:09.603+0000] {logging_mixin.py:151} INFO - Is it possible to automate exporting raw data from Google Analytics without using an API call?
+[2024-08-01T20:26:09.603+0000] {logging_mixin.py:151} INFO - Pipeline Failure due to bin-log expiry
+[2024-08-01T20:26:09.604+0000] {logging_mixin.py:151} INFO - Industry practice for distributed streaming/processing?
+[2024-08-01T20:26:09.604+0000] {logging_mixin.py:151} INFO - Clickhouse on kubernetes
+[2024-08-01T20:26:09.605+0000] {logging_mixin.py:151} INFO - Ideas for this project 
+[2024-08-01T20:26:09.605+0000] {logging_mixin.py:151} INFO - How to profile and resource limit duckdb
+[2024-08-01T20:26:09.606+0000] {logging_mixin.py:151} INFO - Easiest way to automate getting data from Bing/Microsoft Ads data into a Google Sheet?
+[2024-08-01T20:26:09.606+0000] {logging_mixin.py:151} INFO - Anyone experience with AWS SDLF 
+[2024-08-01T20:26:09.606+0000] {logging_mixin.py:151} INFO - Is there growth and learning for data engineers in hospital/healthcare companies that use mainly Epic db/dw? 
+[2024-08-01T20:26:09.607+0000] {logging_mixin.py:151} INFO - Technical vs Subject Matter skills
+[2024-08-01T20:26:09.607+0000] {logging_mixin.py:151} INFO - How Airbyte 1.0 orchestrates data movement jobs
+[2024-08-01T20:26:09.608+0000] {logging_mixin.py:151} INFO - Is anyone else having lots of troubles with the new salesforce connector in data factory?
+[2024-08-01T20:26:09.608+0000] {logging_mixin.py:151} INFO - RDS MySQL -> Snowflake CDC
+[2024-08-01T20:26:09.609+0000] {logging_mixin.py:151} INFO - dumb question-Mining historical cost data
+[2024-08-01T20:26:09.609+0000] {logging_mixin.py:151} INFO - How Data Encryption Can Simplify Infrastructure Architecture
+[2024-08-01T20:26:09.609+0000] {logging_mixin.py:151} INFO - How can I optimize the storage and retrieval of buildable component combinations in a large database?
+[2024-08-01T20:26:09.610+0000] {logging_mixin.py:151} INFO - Alternate scaling strategy with Dagster Job runs on ECS/Fargate
+[2024-08-01T20:26:09.610+0000] {logging_mixin.py:151} INFO - Is HP Laptop R7 7730U good enough for study in data engineering?
+[2024-08-01T20:26:09.611+0000] {logging_mixin.py:151} INFO - What to Expect
+[2024-08-01T20:26:09.611+0000] {logging_mixin.py:151} INFO - Multi Vendor dataset- single product
+[2024-08-01T20:26:09.612+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-08-01T20:26:09.621+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20240801T202606, start_date=20240801T202607, end_date=20240801T202609
+[2024-08-01T20:26:09.654+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-08-01T20:26:09.673+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
